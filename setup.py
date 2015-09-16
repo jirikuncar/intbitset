@@ -48,6 +48,7 @@ setup(
     ext_modules=[
         Extension("intbitset",
                   ["intbitset/intbitset.c", "intbitset/intbitset_impl.c"],
+                  define_macros=[('CYTHON_TRACE', 1)],
                   extra_compile_args=['-O3', '-march=core2', '-mtune=native']
                   # For debug -> '-ftree-vectorizer-verbose=2'
                   )
